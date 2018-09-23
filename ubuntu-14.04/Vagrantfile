@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
+
+Vagrant.configure('2') do |config|
+  config.vm.define 'node-01' do |node|
+    node.vm.box = 'bento/ubuntu-14.04'
+    node.vm.network :private_network, ip: '10.10.10.152'
+    node.vm.hostname = 'node-01'
+  end
+end
+
